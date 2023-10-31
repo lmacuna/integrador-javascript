@@ -2,7 +2,7 @@
     "data":[
         {
             "codigo":1,
-            "img":"ASSETS/IMAGES/TARAGUI-BCP-YERBA-MATE-1KG.png",
+            "img":"../IMAGES/TARAGUI-BCP-YERBA-MATE-1KG.png",
             "descripcion":"Taragui yerba x 1kg",
             "precioAnt":1600,
             "precio":1450,
@@ -10,7 +10,7 @@
         },
         {
             "codigo":2,
-            "img":"ASSETS/IMAGES/cafe-cabrales.jpg",
+            "img":"../IMAGES/cafe-cabrales.jpg",
             "descripcion":"La Planta de Café x 500gr",
             "precioAnt":930,
             "precio":720,
@@ -18,7 +18,7 @@
         },
         {
             "codigo":3,
-            "img":"ASSETS/IMAGES/azucar-chango.png",
+            "img":"../IMAGES/azucar-chango.png",
             "descripcion":"Azucar chango x 1kg",
             "precioAnt":1030,
             "precio":810,
@@ -26,7 +26,7 @@
         },
         {
             "codigo":4,
-            "img":"ASSETS/IMAGES/natura-2.jpg",
+            "img":"../IMAGES/natura-2.jpg",
             "descripcion":"Aceite Natura girasol x 1.5cc",
             "precioAnt":1400,
             "precio":1100,
@@ -34,7 +34,7 @@
         },
         {
             "codigo":5,
-            "img":"ASSETS/IMAGES/molto-pure.jpg",
+            "img":"../IMAGES/molto-pure.jpg",
             "descripcion":"Tomate Molto x 520cc",
             "precioAnt":490,
             "precio":380,
@@ -42,7 +42,7 @@
         },
         {
             "codigo":6,
-            "img":"ASSETS/IMAGES/Tallarines-luchetti.jpg",
+            "img":"../IMAGES/Tallarines-luchetti.jpg",
             "descripcion":"Luchetti Tallarines x 500gr",
             "precioAnt":410,
             "precio":365,
@@ -50,7 +50,7 @@
         },
         {
             "codigo":7,
-            "img":"ASSETS/IMAGES/blanca-flor.jpg",
+            "img":"../IMAGES/blanca-flor.jpg",
             "descripcion":"Harina Blanca Flor x 1kg",
             "precioAnt":830,
             "precio":690,
@@ -58,7 +58,7 @@
         },
         {
             "codigo":8,
-            "img":"ASSETS/IMAGES/pollosoychu.jpg",
+            "img":"../IMAGES/pollosoychu.jpg",
             "descripcion":"Pollo x 1kg",
             "precioAnt":850,
             "precio":680,
@@ -66,7 +66,7 @@
         },
         {
             "codigo":9,
-            "img":"ASSETS/IMAGES/bola-de-lomo.jpg",
+            "img":"../IMAGES/bola-de-lomo.jpg",
             "descripcion":"Bola de Lomo x 1kg",
             "precioAnt":2400,
             "precio":2150,
@@ -74,7 +74,7 @@
         },
         {
             "codigo":10,
-            "img":"ASSETS/IMAGES/cebolla.jpg",
+            "img":"../IMAGES/cebolla.jpg",
             "descripcion":"Cebolla x 1kg",
             "precioAnt":350,
             "precio":220,
@@ -82,7 +82,7 @@
         },
         {
             "codigo":11,
-            "img":"ASSETS/IMAGES/tomate-fresco.jpg",
+            "img":"../IMAGES/tomate-fresco.jpg",
             "descripcion":"Tomate x 1kg",
             "precioAnt":790,
             "precio":640,
@@ -90,7 +90,7 @@
         },
         {
             "codigo":12,
-            "img":"ASSETS/IMAGES/naranjas.jpg",
+            "img":"../IMAGES/naranjas.jpg",
             "descripcion":"Naranja x 1kg",
             "precioAnt":340,
             "precio":290,
