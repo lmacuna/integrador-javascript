@@ -7,8 +7,7 @@
     flex-wrap: wrap;
     max-width: 100%;
     min-height: auto;
-    gap: 1.05em;
-    border: 2px solid red;
+    gap: 1.1em;
     padding-top: 200px;
     padding-bottom: 50px;
 }
@@ -16,7 +15,6 @@
 .tarjeta{
     flex-basis: 16em;
     height: auto;
-    /* border:1px solid grey; */
     border-radius: 5px;
     margin-bottom: 30px;
 }
@@ -52,4 +50,35 @@
     color: white;
     border-radius: 5px;
     font-size: 18px;
+    cursor: pointer;
+}
+
+#cantidad{
+    width: 30%;
+    padding: 10px 20px;
+    padding-right: 0px;
+    text-align: center;
+}
+#compras{
+    visibility: hidden;
+}
+.compras-on{
+    visibility: visible !important;
+    color:black;
+    cursor: pointer;
+    width: 80px !important;
+    height: 80px !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.vista-cant{
+   background-color: white;
+   font-weight: bold;
+   color: black;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 50%;
+   padding:10px 15px;
 }

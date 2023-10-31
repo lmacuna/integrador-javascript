@@ -6,21 +6,21 @@ const getArticulos = async () => {
     var metodo = 'GET'
     var url = '../Mock/articulos.json'
     var res = await services(data, metodo, url, token)
-        res=await res.data   
-    return (console.log(res),localStorage.setItem("articulos",JSON.stringify(res)))
+    res = await res.data
+    return (console.log(res), localStorage.setItem("articulos", JSON.stringify(res)))
 
 }
 
 
 getArticulos()
 
-const vistaArticulos=()=>{
+const vistaArticulos = () => {
 
-   let articulos=localStorage.getItem("articulos")
-    articulos=JSON.parse(articulos)
+    let articulos = localStorage.getItem("articulos")
+    articulos = JSON.parse(articulos)
 
     articulos.forEach(art => {
-        document.querySelector("#root").innerHTML+=`
+        document.querySelector("#root").innerHTML += `
         <div class="tarjeta">
 
            <div class="item">
@@ -43,36 +43,83 @@ vistaArticulos()
 
 
 
-const modalVenta=(id)=>{
-   console.log(id)
-   let articulos=localStorage.getItem("articulos")
-         articulos=JSON.parse(articulos)
+const modalVenta = (id) => {
+    console.log(id)
+    id = parseInt(id)
+    let articulos = localStorage.getItem("articulos")
+    articulos = JSON.parse(articulos)
 
-          Swal.fire({
-           
-            html:`
+    var art = articulos.find(ar => id === ar.codigo)
+    console.log(art)
+
+    Swal.fire({
+        text: 'Agregar?',
+        width: '500px',
+        background: 'white',
+
+        html: `
             
-               <div style="text-align-center !important;width:200px;background:white;color:black">
-               <h4>Agregar cantidad</h4>
-               <input id="cantidad" placeholder="cantidad"></input><br>
-               <button id=${id} onclick="confirmCantidad(id)">Añadir cantidad</button>
+               <div style="text-align-center !important;background:whie;color:black;font-size:14px">
+               <h4 style="color:black;font-size:16px">Agregar cantidad?</h4><br>
+               <img src=${art.img} style="width:200px;heihgt:200px;border-radius:5px"></img>
+               <b><p>${art.descripcion}<p>
+               <p>Antes: <strike>${art.precioAnt}</strike></p>
+               <p>Precio: ${art.precio}<p></b>
+               <input type="number" min="1" id="cantidad" placeholder="cantidad"></input><br>
+               
                </div>
             `,
-            showConfirmButton:false,
-            showCancelButton:true,
-            cancelButtonText:'<span id="salir" style="border:none !important;font-size:16px;color:white;font-weight:bold" value="false">X</span>',
-          })
+           
+        confirmButtonText: 'Agregar',
+        denyButtonText: `Cancelar`,
+        showConfirmButton: true,
+        showCancelButton: true,
+        //cancelButtonText:'<span id="salir" style="border:none !important;font-size:16px;color:white;font-weight:bold" value="false">X</span>',
+    }).then((result) => {
+        console.log(result)
+        if (result.isConfirmed) {
+            id = art.codigo
+            confirmCantidad(art)
+        }else{
+            Swal.fire({
+                text: 'Cancelaste agregar',
+                width: '200px',
+                timer: 3000,
+                showCancelButton: false,
+                showConfirmButton: false
+            })
+        }
+    })
 
 }
 
+//<button id=${id} onclick="confirmCantidad(id)">Añadir cantidad</button>
 
+var ticket=[];
+const confirmCantidad = (art) => {
+    let cantidad = document.querySelector("#cantidad").value
+    console.log(art)
+      var compra={
+        codigo:art.codigo,
+        articulo:art.descripcion,
+        cant:cantidad,
+        precio:art.precio*cantidad,
+      }
 
+      ticket.push(compra)
+      sessionStorage.setItem("ticket",JSON.stringify(ticket))
+      ticket=sessionStorage.getItem("ticket")
+      ticket=JSON.parse(ticket)
+    console.log(`la cantidad es ${cantidad}`)
+    setTimeout(() => {
+        window.location.href="#arriba"
+        console.log(ticket)
+    }, 500);
 
-const confirmCantidad=(id)=>{
-   let cantidad=document.querySelector("#cantidad").value
-        console.log(id)
-        console.log(`la cantidad es ${cantidad}`)
-        
+    ticket.length>=1?(document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i class="fa-solid fa-cart-shopping">`):null
 
-        
 }
+
+ticket=sessionStorage.getItem("ticket")
+ticket=JSON.parse(ticket)
+ticket.length>=1&&sessionStorage.getItem("ticket")!==null?(document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i class="fa-solid fa-cart-shopping">`):null
