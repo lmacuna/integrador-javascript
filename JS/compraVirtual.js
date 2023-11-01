@@ -140,12 +140,20 @@ let total=0;
                 total=total+ f.precio
             document.querySelector("#mostrar-ticket").innerHTML+=
                   `
+                 
                   <div style="display:flex;margin-bottom:2px"><input type="checkbox"> <p>${f.articulo} subTotal: ${f.precio}</p></div>
                   `
                
           })
         
-          document.querySelector("#mostrar-ticket").innerHTML+=`<br><br><b style="color:black;margin:auto !important">Total:</b><p style="color:black;margin:auto !important">${total}</p><div style="width:100%;display:flex; margin-top:40px;justify-content:center;align-items:center"><button class="btn-pagar"><i class="fa-brands fa-cc-amazon-pay"></i></button> <button onclick="salir()" class="btn-salir"><i class="fa-regular fa-circle-xmark"></i></button></div>`
+          document.querySelector("#mostrar-ticket").innerHTML+=`<br> <div>
+          <input id="debito" type="radio" value="DEBITO"></input>
+          <label for="debito">DEBITO</label>
+          <input id="credito" type="radio" value="CREDITO"></input>
+          <label for="credito">CREDITO</label>
+          <input id="efectivo" type="radio" value="EFECTIVO"></input>
+          <label for="efectivo">EFECTIVO</label>
+          </div><br><b style="color:black;margin:auto !important">Total:</b><p style="color:black;margin:auto !important">${total}</p><div style="width:100%;display:flex; margin-top:40px;justify-content:center;align-items:center"><button class="btn-pagar"><i class="fa-brands fa-cc-amazon-pay"></i></button> <button onclick="salir()" class="btn-salir"><i class="fa-regular fa-circle-xmark"></i></button></div>`
          
 
         
