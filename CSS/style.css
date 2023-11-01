@@ -355,6 +355,7 @@ footer {
     background: white;
     color: rgb(20, 20, 20);
     font-weight: lighter;
+    font-size: 12px;
     border: 1px solid rgb(46, 46, 46);
     box-shadow: 1px 1px 1px rgb(20, 20, 20);
     border-radius: 3px;

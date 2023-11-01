@@ -140,7 +140,7 @@ let total=0;
                 total=total+ f.precio
             document.querySelector("#mostrar-ticket").innerHTML+=
                   `
-                  <div style="display:flex"><input type="checkbox"> <p>${f.articulo} subTotal: ${f.precio}</p></div>
+                  <div style="display:flex;margin-bottom:2px"><input type="checkbox"> <p>${f.articulo} subTotal: ${f.precio}</p></div>
                   `
                
           })
