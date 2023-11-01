@@ -12,3 +12,12 @@ setInterval(() => {
     }, 5000);
    
 }, 10000);
+
+
+if(sessionStorage.getItem("ticket")!==null){
+    ticket=sessionStorage.getItem("ticket")
+    ticket=JSON.parse(ticket)
+       document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i class="fa-solid fa-cart-shopping">`
+  }
+
+

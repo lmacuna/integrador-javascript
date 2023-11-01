@@ -1,5 +1,3 @@
-
-
 const getArticulos = async () => {
 
     var data, token;
@@ -98,6 +96,7 @@ const modalVenta = (id) => {
 var ticket=[];
 const confirmCantidad = (art) => {
     let cantidad = document.querySelector("#cantidad").value
+        cantidad=parseInt(cantidad)
     console.log(art)
       var compra={
         codigo:art.codigo,
@@ -116,10 +115,46 @@ const confirmCantidad = (art) => {
         console.log(ticket)
     }, 500);
 
-    ticket.length>=1?(document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i class="fa-solid fa-cart-shopping">`):null
+    ticket.length>=1?(document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i onclick="mostrar()" class="fa-solid fa-cart-shopping">`):null
 
 }
+  /* sessionStorage.setItem("ticket",JSON.stringify(ticket))
+      ticket=sessionStorage.getItem("ticket")
+      ticket=JSON.parse(ticket) */
+      if(sessionStorage.getItem("ticket")!==null){
+       var ticket=sessionStorage.getItem("ticket")
+        ticket=JSON.parse(ticket)
+           document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i onclick="mostrar()" class="fa-solid fa-cart-shopping">`
+      }
 
-ticket=sessionStorage.getItem("ticket")
-ticket=JSON.parse(ticket)
-ticket.length>=1&&sessionStorage.getItem("ticket")!==null?(document.querySelector("#compras").classList.add("compras-on"),document.querySelector("#compras").innerHTML=`<span class="vista-cant">${ticket.length}</span><i class="fa-solid fa-cart-shopping">`):null
+let vista;
+let total=0;
+      const mostrar=()=>{
+        document.querySelector("#mostrar-ticket").innerHTML=""
+        document.querySelector("#mostrar-ticket").classList.add("mostrar-ticket-on")
+          let factura= sessionStorage.getItem("ticket")
+          factura=JSON.parse(factura)
+          console.log(factura)
+        factura.forEach(f =>{
+            
+                total=total+ f.precio
+            document.querySelector("#mostrar-ticket").innerHTML+=
+                  `
+                  <div style="display:flex"><input type="checkbox"> <p>${f.articulo} subTotal: ${f.precio}</p></div>
+                  `
+               
+          })
+        
+          document.querySelector("#mostrar-ticket").innerHTML+=`<br><br><b style="color:black;margin:auto !important">Total:</b><p style="color:black;margin:auto !important">${total}</p><div style="width:100%;display:flex; margin-top:40px;justify-content:center;align-items:center"><button class="btn-pagar"><i class="fa-brands fa-cc-amazon-pay"></i></button> <button onclick="salir()" class="btn-salir"><i class="fa-regular fa-circle-xmark"></i></button></div>`
+         
+
+        
+      }
+
+
+
+      const salir=()=>{
+        document.querySelector("#mostrar-ticket").classList.remove("mostrar-ticket-on")
+        document.querySelector("#mostrar-ticket").innerHTML=""
+      }
+

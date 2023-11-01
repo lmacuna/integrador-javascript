@@ -1,7 +1,7 @@
 * {
     padding: 0%;
     margin: 0%;
-    font-family: 'Nunito', 'Serif',sans-serif;
+    font-family: 'Nunito', 'Serif', sans-serif;
     box-sizing: border-box;
 }
 
@@ -11,18 +11,18 @@ body {
     margin: 0%;
     width: 100%;
     height: 100%;
-    
-    
+
+
 }
 
 header {
     width: 100%;
     height: 120px;
-    
+
     display: flex;
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
- 
+
     background: rgb(235, 235, 235);
     position: fixed;
 
@@ -37,9 +37,11 @@ h1 {
     font-weight: bold;
     font-size: 3em;
     text-align: center;
+
     @media (max-width:800px) {
         font-size: 2em;
     }
+
     @media (max-width:600px) {
         font-size: 100%;
     }
@@ -57,53 +59,61 @@ h1 {
     color: white;
     font-weight: bold;
     font-size: 32px;
-  
+
     clip-path: ellipse(50% 40% at 50% 50%);
+
     @media (max-width:800px) {
-        width:50% !important;
+        width: 50% !important;
         font-size: 24px;
     }
+
     @media (max-width:700px) {
-        height:80px ;
+        height: 80px;
     }
+
     @media (max-width:600px) {
         width: 75% !important;
-        height:70px ;
+        height: 70px;
         font-size: 100%;
     }
+
     @media (max-width:400px) {
         width: 95% !important;
         font-size: 100%;
-        padding:22px 32px;
+        padding: 22px 32px;
     }
 }
-.carrito{
+
+.carrito {
     width: 150px;
     height: 100%;
-  
+
     filter: brightness(93%);
+
     @media (max-width:600px) {
-       width: 80px;
-       height: 80%;
+        width: 80px;
+        height: 80%;
     }
 }
-.carrito-on{
+
+.carrito-on {
     transform: translateX(-1500px);
     transition: all 1.9s;
 }
+
 main {
-    
-   padding-bottom: 50px;
+
+    padding-bottom: 50px;
     width: 100%;
     height: auto;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
     max-width: 100%;
     min-height: 100vh;
     margin-bottom: 50px;
-   
+
 }
 
 
@@ -112,9 +122,9 @@ nav {
     height: 50px;
     position: fixed;
     margin-top: 120px;
-   /*  background-color: rgb(50, 205, 115); */
-   background-color: white;
-   z-index: 3;
+    /*  background-color: rgb(50, 205, 115); */
+    background-color: white;
+    z-index: 3;
 }
 
 nav>ul {
@@ -134,43 +144,51 @@ nav>ul>li {
 nav>ul>li>a {
     text-decoration: none;
     font-size: 1em;
-   
+
     margin: 30px;
     color: rgb(20, 20, 20);
+
     @media (max-width:400px) {
         font-size: 14px !important;
     }
 }
-.novedades{
+
+.novedades {
     border-radius: 4px;
     padding: 5px 12px;
-    background:black;
+    background: black;
     color: white;
     font-weight: bold;
 }
-.img-whatsapp{
+
+.img-whatsapp {
     width: 80px !important;
     height: 80px !important;
     position: relative;
     z-index: 4;
 }
-.span-nav{
+
+.span-nav {
     font-weight: bold;
     font-size: 18px;
     animation: cartel 5s infinite;
     animation-delay: 10s;
+
     @media (max-width:600px) {
         font-size: 14px;
     }
 }
-@keyframes cartel{
-    from{
+
+@keyframes cartel {
+    from {
         transform: rotateY(0deg);
     }
-    to{
+
+    to {
         transform: rotateY(360deg);
     }
 }
+
 #check,
 .label-check {
     display: none;
@@ -180,7 +198,7 @@ nav>ul>li>a {
 
 @media (max-width:1052px) {
     nav {
-        top:0 !important;
+        top: 0 !important;
         margin-top: 120px;
         left: -100%;
         width: 100%;
@@ -232,13 +250,14 @@ nav>ul>li>a {
 }
 
 
-footer{
+footer {
     width: 100%;
     height: auto;
     margin: 0%;
     background-color: rgb(235, 235, 235);
 }
-.footer{
+
+.footer {
     width: 100%;
     height: auto;
     padding: 15px;
@@ -246,7 +265,7 @@ footer{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-   
+
     gap: 3em;
     max-width: 100%;
     margin: 0%;
@@ -254,31 +273,35 @@ footer{
 
 }
 
-.footer>a{
+.footer>a {
     color: rgb(20, 20, 20);
     text-decoration: none;
     font-weight: bold;
     flex-basis: 4em;
     height: 100%;
+
     @media (max-width:400px) {
         flex-basis: 3em;
     }
 }
-.img-footer{
+
+.img-footer {
     width: 100%;
 }
-.copy-rigth{
+
+.copy-rigth {
     width: 100%;
     padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+
     @media (max-width:600px) {
         font-size: 14px !important;
     }
 }
 
-.btn-up{
+.btn-up {
     width: 40px;
     float: right;
     position: relative;
@@ -287,4 +310,94 @@ footer{
     z-index: 4;
     margin-right: 10px;
     bottom: 50px;
+}
+
+
+
+
+#compras {
+    visibility: hidden;
+}
+
+.compras-on {
+    visibility: visible !important;
+    color: black;
+    cursor: pointer;
+    width: 80px !important;
+    height: 80px !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.vista-cant {
+    background-color: white;
+    font-weight: bold;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 10px 15px;
+}
+
+
+
+#mostrar-ticket {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: left;
+    flex-direction: column;
+    padding: 30px;
+    top: 180px;
+    background: white;
+    color: rgb(20, 20, 20);
+    font-weight: lighter;
+    border: 1px solid rgb(46, 46, 46);
+    box-shadow: 1px 1px 1px rgb(20, 20, 20);
+    border-radius: 3px;
+    visibility: hidden;
+    position: absolute !important;
+}
+
+.mostrar-ticket-on {
+    visibility: visible !important;
+    animation: modal-ticket 1s ease;
+    transition: all 3s;
+    z-index: 8 !important;
+    font-size: 12px;
+
+
+}
+
+@keyframes modal-ticket {
+    from {
+        top: -100%;
+    }
+
+    to {
+        top: 300px !important;
+    }
+}
+
+.btn-pagar {
+    border-radius: 4px;
+    font-size: 44px;
+    background: white;
+    border: none;
+    margin: 5px;
+    color: black;
+    cursor: pointer;
+
+}
+
+.btn-salir {
+    border-radius: 4px;
+    font-size: 44px;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
 }
