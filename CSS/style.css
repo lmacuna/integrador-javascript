@@ -361,7 +361,7 @@ footer {
     border-radius: 3px;
     visibility: hidden;
     position: absolute !important;
-    transition: all 3s;
+   
     @media (min-height:300px) {
         height: 300px;
         overflow-y: scroll !important;
