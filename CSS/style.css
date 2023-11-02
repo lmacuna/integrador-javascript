@@ -361,8 +361,9 @@ footer {
     border-radius: 3px;
     visibility: hidden;
     position: absolute !important;
+    transition: all 3s;
     @media (min-height:300px) {
-        height: 400px;
+        height: 300px;
         overflow-y: scroll !important;
     }
     
@@ -371,7 +372,7 @@ footer {
 .mostrar-ticket-on {
     visibility: visible !important;
     animation: modal-ticket 1s ease;
-    transition: all 3s;
+   
     z-index: 8 !important;
     font-size: 12px;
   padding-top: 100px !important;
